@@ -1,1 +1,515 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Glassmorphism Homepage</title>\n    <style>\n        body {\n            margin: 0;\n            font-family: Arial, sans-serif;\n            background-color: #222;\n            color: white;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            height: 100vh;\n            transition: background-color 0.5s;\n        }\n        .glass {\n            background: rgba(255, 255, 255, 0.1);\n            border-radius: 10px;\n            backdrop-filter: blur(10px);\n            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\n            width: 300px;\n            padding: 20px;\n            text-align: center;\n            transition: transform 0.5s;\n        }\n        .glass:hover {\n            transform: scale(1.05);\n        }\n        .toggle {\n            margin-top: 20px;\n            cursor: pointer;\n            padding: 10px;\n            border: none;\n            border-radius: 5px;\n            background-color: rgba(255, 255, 255, 0.3);\n            color: white;\n            transition: background-color 0.3s;\n        }\n        .toggle:hover {\n            background-color: rgba(255, 255, 255, 0.5);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"glass\">\n        <h1>Welcome to My Glassmorphism Homepage</h1>\n        <p>This is a modern design trend implemented here.</p>\n        <button class=\"toggle\" onclick=\"toggleDarkMode()\">Toggle Dark Mode</button>\n    </div>\n    <script>\n        function toggleDarkMode() {\n            document.body.classList.toggle('dark');\n            if (document.body.classList.contains('dark')) {\n                document.body.style.backgroundColor = '#111';\n            } else {\n                document.body.style.backgroundColor = '#222';\n            }\n        }\n    </script>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service-Male | আপনার সেবা প্রদানকারী</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Glass Morphism Effect */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            animation: slideIn 0.6s ease-out;
+        }
+
+        body.dark-mode .glass-box {
+            background: rgba(30, 30, 46, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-yes {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            background: rgba(76, 175, 80, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-no {
+            background: rgba(244, 67, 54, 0.9);
+            color: white;
+        }
+
+        .btn-no:hover {
+            background: rgba(244, 67, 54, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+        }
+
+        .btn-primary {
+            background: rgba(33, 150, 243, 0.9);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: rgba(33, 150, 243, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(20deg);
+        }
+
+        .error-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(244, 67, 54, 0.95);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+            animation: popIn 0.4s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .error-popup.show {
+            display: block;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        .payment-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .price-box {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .price-box .currency {
+            font-size: 28px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="tel"]::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            transition: width 0.3s ease;
+        }
+
+        .step-counter {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .success-message {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4CAF50;
+            color: #4CAF50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @media (max-width: 600px) {
+            .glass-box {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .price-box {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="error-popup" id="errorPopup">
+        <h2>❌ দুঃখিত!</h2>
+        <p>আপনি আমাদের সেবা ব্যবহার করতে আগ্রহী নন। ধন্যবাদ!</p>
+        <button class="btn btn-primary" onclick="closeErrorPopup()" style="margin-top: 15px;">ঠিক আছে</button>
+    </div>
+
+    <div class="container">
+        <div class="glass-box">
+            <div class="header">
+                <div class="logo">💼</div>
+                <h1>Service-Male</h1>
+                <p>আপনার বিশ্বস্ত সেবা প্ল্যাটফর্ম</p>
+            </div>
+
+            <!-- Page 1: Home -->
+            <div class="content active" id="page1">
+                <p style="text-align: center; font-size: 18px; margin: 30px 0;">
+                    আমরা আপনার জন্য সেরা সেবা প্রদান করি। আমাদের সাথে কাজ করতে আপনি কি আগ্রহী?
+                </p>
+
+                <div class="button-group">
+                    <button class="btn btn-yes" onclick="goToPage2()">হ্যাঁ, আগ্রহী ✓</button>
+                    <button class="btn btn-no" onclick="showError()">না, আগ্রহী নই</button>
+                </div>
+            </div>
+
+            <!-- Page 2: Agreement -->
+            <div class="content" id="page2">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%;"></div>
+                </div>
+                
+                <h2 style="color: white; margin-bottom: 20px; font-size: 22px;">আপনার সম্মতি নিশ্চিত করুন</h2>
+                
+                <div class="payment-info">
+                    <p style="margin: 0;">
+                        🔒 <strong>গুরুত্বপূর্ণ তথ্য:</strong><br>
+                        আমাদের সাথে কাজ করার জন্য আপনাকে ২০০ টাকা নিরাপত্তা জমা দিতে হবে। যখন আপনার কাজ সম্পূর্ণ হবে, তখন আপনি সম্পূর্ণ অর্থ ফেরত পাবেন।
+                    </p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-yes" onclick="goToPage3()">আমি সম্মত ✓</button>
+                    <button class="btn btn-no" onclick="goToPage1()">ফিরে যান</button>
+                </div>
+
+                <div class="step-counter">ধাপ 1 / 4</div>
+            </div>
+
+            <!-- Page 3: Payment -->
+            <div class="content" id="page3">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                </div>
+
+                <h2 style="color: white; margin-bottom: 20px; font-size: 22px;">নিরাপত্তা জমা পেমেন্ট</h2>
+
+                <div class="price-box">
+                    <span class="currency">৳</span> 200
+                </div>
+
+                <p style="text-align: center; color: rgba(255, 255, 255, 0.8);">
+                    আপনার নিরাপত্তা জমা হিসেবে ২০০ টাকা প্রদান করুন
+                </p>
+
+                <form onsubmit="processPayment(event)">
+                    <input type="text" placeholder="আপনার নাম" required>
+                    <input type="email" placeholder="ইমেইল ঠিকানা" required>
+                    <input type="tel" placeholder="মোবাইল নম্বর" required>
+                    <input type="text" placeholder="কার্ড নম্বর (****)" required>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">পেমেন্ট সম্পূর্ণ করুন</button>
+                </form>
+
+                <div class="button-group" style="margin-top: 15px;">
+                    <button class="btn btn-no" onclick="goToPage2()">ফিরে যান</button>
+                </div>
+
+                <div class="step-counter">ধাপ 2 / 4</div>
+            </div>
+
+            <!-- Page 4: Checkout -->
+            <div class="content" id="page4">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+
+                <h2 style="color: white; margin-bottom: 20px; font-size: 22px;">চেকআউট</h2>
+
+                <div class="success-message show">
+                    ✓ পেমেন্ট সফলভাবে সম্পূর্ণ হয়েছে!
+                </div>
+
+                <div class="payment-info">
+                    <p style="margin: 0;">
+                        <strong>আপনার লেনদেনের বিবরণ:</strong><br><br>
+                        💰 পরিমাণ: ৳ 200<br>
+                        🆔 লেনদেন ID: #SM20260206<br>
+                        📅 তারিখ: ২০২৬-০২-০৬<br>
+                        ✓ স্ট্যাটাস: নিশ্চিত
+                    </p>
+                </div>
+
+                <div class="payment-info">
+                    <p style="margin: 0;">
+                        📋 <strong>পরবর্তী পদক্ষেপ:</strong><br>
+                        আমাদের টিম খুব শীঘ্রই আপনার সাথে যোগাযোগ করবে আপনার কাজের বিস্তারিত আলোচনার জন্য।
+                    </p>
+                </div>
+
+                <button class="btn btn-primary" onclick="goToPage5()">সম্পূর্ণ করুন</button>
+
+                <div class="step-counter">ধাপ 3 / 4</div>
+            </div>
+
+            <!-- Page 5: Final -->
+            <div class="content" id="page5">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="font-size: 64px; margin: 30px 0; animation: float 3s ease-in-out infinite;">🎉</div>
+                    <h2 style="color: white; margin-bottom: 10px;">ধন্যবাদ!</h2>
+                    <p style="font-size: 16px; margin: 20px 0;">আপনি সফলভাবে নিবন্ধন সম্পূর্ণ করেছেন</p>
+
+                    <div class="payment-info">
+                        <p style="margin: 0;">
+                            আমরা আপনার সাথে কাজ করতে উন্মুখ। আমাদের টিম ২৪ ঘন্টার মধ্যে আপনার সাথে যোগাযোগ করবে।
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="goToPage1()">নতুন শুরু করুন</button>
+                </div>
+
+                <div class="step-counter">ধাপ 4 / 4 - সম্পূর্ণ</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPage(pageNum) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+
+        function goToPage1() { goToPage(1); }
+        function goToPage2() { goToPage(2); }
+        function goToPage3() { goToPage(3); }
+        function goToPage4() { goToPage(4); }
+        function goToPage5() { goToPage(5); }
+
+        function showError() {
+            document.getElementById('overlay').classList.add('show');
+            document.getElementById('errorPopup').classList.add('show');
+        }
+
+        function closeErrorPopup() {
+            document.getElementById('overlay').classList.remove('show');
+            document.getElementById('errorPopup').classList.remove('show');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        function processPayment(event) {
+            event.preventDefault();
+            goToPage4();
+        }
+
+        // Close popup when clicking overlay
+        document.getElementById('overlay').addEventListener('click', closeErrorPopup);
+    </script>
+</body>
+</html>
